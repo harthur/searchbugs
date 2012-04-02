@@ -4,7 +4,11 @@ var openStatus = ["REOPENED", "NEW", "ASSIGNED", "UNCONFIRMED"];
 var closedStatus = ["RESOLVED", "VERIFIED"];
 
 function statusUrl(statuses) {
-  return ["&bug_status=" + statuses[i] for (i in statuses)].join("");
+  var url = "";
+  statuses.forEach(function(status) {
+    url += "&bug_status=" + status;
+  })
+  return url;
 };
 
 $(document).ready(function() {
