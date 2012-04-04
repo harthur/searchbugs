@@ -66,10 +66,11 @@ $(document).ready(function() {
               + encodeURIComponent(summary);
     }
 
-    var comp = toComponent($("#search-form .component-search").val());
+    var comp = $("#search-component").val();
     if (comp) {
-       url += "&product=" + encodeURIComponent(comp[0])
-              + "&component=" + encodeURIComponent(comp[1]);
+       var yunodestructuring = toComponent(comp);
+       url += "&product=" + encodeURIComponent(yunodestructuring[0])
+              + "&component=" + encodeURIComponent(yunodestructuring[1]);
     }
     console.log(url);
 
